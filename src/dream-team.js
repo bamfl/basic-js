@@ -13,16 +13,4 @@ import { NotImplementedError } from '../extensions/index.js';
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
- export default function countCats(matrix) {
-  let counter = 0;
 
-  matrix.forEach((arr) => {
-    arr.forEach((item) => {
-      if (item === '^^') {
-        counter++;
-      }
-    });
-  });
-
-  return counter;
-}
