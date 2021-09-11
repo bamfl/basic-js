@@ -22,5 +22,11 @@ export default function dateSample(sampleActivity) {
     return false;
   }
 
-  return Math.ceil((HALF_LIFE_PERIOD * Math.log(MODERN_ACTIVITY / sampleActivity)) / Math.log(2));
+  if (!parseFloat(sampleActivity)) {
+    return false;
+  }
+
+  const age = Math.ceil((HALF_LIFE_PERIOD * Math.log(MODERN_ACTIVITY / sampleActivity)) / Math.log(2));
+
+  return age > 0 ? age : false;
 }
