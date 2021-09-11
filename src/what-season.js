@@ -20,7 +20,7 @@ export default function getSeason(date) {
     throw new Error('Invalid date!');
 	}
 
-  if (!(new Date(date) instanceof Date)) {
+  if (Object.prototype.toString.call(date) !== '[object Date]') {
     throw new Error('Invalid date!');
   }
 
