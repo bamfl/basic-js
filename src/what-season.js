@@ -16,11 +16,7 @@ export default function getSeason(date) {
     return 'Unable to determine the time of year!';
   }
 
-	if (typeof date !== 'object' || typeof date === 'function' || Object.keys(date).length) {
-    throw new Error('Invalid date!');
-	}
-
-  if (Object.prototype.toString.call(date) !== '[object Date]') {
+  if (typeof date !== 'object' || typeof date === 'function' || !(date instanceof Date) || Object.keys(date).length) {
     throw new Error('Invalid date!');
   }
 
