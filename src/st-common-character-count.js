@@ -13,14 +13,15 @@ import { NotImplementedError } from '../extensions/index.js';
  */
 export default function getCommonCharacterCount(s1, s2) {
 	let counter = 0;
-	const reducer = s1.split('').reduce((prev, current) => {
+	const arr2 = s2.split('');
 
-		if (prev === current) {
-			counter++;
-		}
-	});
+  for (let i = 0; i < s1.length; i++) {
+    if (arr2.includes(s1[i])) {
+      arr2.splice(arr2.indexOf(s1[i]), 1);
+      counter++;
+    }
+  }
 
 	return counter;
 }
 
-console.log(getCommonCharacterCount('aabcc', 'adcaa'));
