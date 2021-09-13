@@ -25,5 +25,3 @@ export default function repeater(str, options) {
 
   return new Array(repeatTimes).fill(str + additionStr).join(separator);
 }
-
-console.log(repeater('la', { repeatTimes: 3 }));
